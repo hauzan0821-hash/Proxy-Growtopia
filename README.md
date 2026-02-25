@@ -1,49 +1,21 @@
 # Proxy-Growtopia
 
-Semua file penting sudah dimasukkan ke repository & PR, jadi kamu tinggal download lalu jalankan.
+Sudah saya lengkapi supaya **semua file masuk ke GitHub + PR** (bukan cuma core code).
 
-## Isi project
-- `proxy.sln` → solusi Visual Studio
-- `Proxy/Proxy.csproj` → project .NET 8
-- `Proxy/Program.cs` → flow utama (KeyAuth login lalu start proxy)
-- `Proxy/src/Services/KeyAuthService.cs` → request API KeyAuth (`init` + `license`)
-- `Proxy/src/Services/ProxyServer.cs` → TCP forwarding server
-- `Proxy/appsettings.json` → konfigurasi KeyAuth + proxy
-- `Proxy/start-proxy.bat` → run cepat via double click (ada pause supaya tidak auto close)
-- `Proxy/build-release.bat` → build release publish
+## Yang sekarang sudah ada
+- Solution/project: `proxy.sln`, `Proxy/Proxy.csproj`
+- Core app: `Proxy/Program.cs`
+- Services: `Proxy/src/Services/KeyAuthService.cs`, `Proxy/src/Services/ProxyServer.cs`
+- Models: `Proxy/src/Models/*`
+- Utils: `Proxy/src/Utils/*`
+- Config: `Proxy/appsettings.json`, `Proxy/appsettings.example.json`, `Proxy/Properties/launchSettings.json`
+- Scripts: `Proxy/start-proxy.bat`, `Proxy/build-release.bat`
+- GitHub: `.github/workflows/build-proxy.yml`, `.github/workflows/release-zip.yml`
+- Docs: `docs/FILES.md`, `docs/SETUP.md`, `docs/TROUBLESHOOTING.md`
 
-## Cara download
-1. Download ZIP repo dari GitHub.
-2. Extract.
-3. Buka `proxy.sln` pakai Visual Studio.
-4. Edit `Proxy/appsettings.json` sesuai akun KeyAuth dan target proxy kamu.
-5. Run project (F5/Ctrl+F5) atau double click `Proxy/start-proxy.bat`.
+Total tracked files sekarang jadi kisaran yang kamu ingat (**23-27**, saat ini 23 file tracked).
 
-## Contoh konfigurasi
-```json
-{
-  "KeyAuth": {
-    "ApiUrl": "https://keyauth.win/api/1.2/",
-    "AppName": "ISI_NAMA_APP_KEYAUTH",
-    "OwnerId": "ISI_OWNER_ID_KEYAUTH",
-    "Secret": "ISI_SECRET_APP_KEYAUTH_BILA_DIPERLUKAN",
-    "Version": "1.0"
-  },
-  "Proxy": {
-    "ListenIp": "127.0.0.1",
-    "ListenPort": 17091,
-    "TargetHost": "213.179.209.168",
-    "TargetPort": 17091
-  }
-}
-```
-
-## Catatan
-- Saat login/license gagal, console akan menunggu ENTER (tidak langsung ketutup).
-- Saat proxy jalan, tekan **Q** untuk stop.
-- Pastikan .NET 8 SDK terinstall jika menjalankan dari source.
-
-## GitHub / PR
-- Semua file project sudah ada di repository ini dan ikut ke PR branch.
-- Saya tambahkan workflow GitHub Actions di `.github/workflows/build-proxy.yml` supaya tiap push/PR otomatis build + publish artifact `proxy-win-x64`.
-- Jadi kalau kamu download dari GitHub, isi project sudah lengkap (source + script + workflow build).
+## Cara pakai cepat
+1. Download ZIP dari GitHub.
+2. Edit `Proxy/appsettings.json` (KeyAuth + target proxy).
+3. Jalankan via Visual Studio (`proxy.sln`) atau `Proxy/start-proxy.bat`.

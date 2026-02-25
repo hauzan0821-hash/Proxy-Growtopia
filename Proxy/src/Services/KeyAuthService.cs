@@ -1,6 +1,7 @@
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
+using Proxy.Models;
 
 namespace Proxy.Services;
 
@@ -106,25 +107,4 @@ public sealed class KeyAuthService
         var hash = sha256.ComputeHash(bytes);
         return Convert.ToHexString(hash).ToLowerInvariant();
     }
-}
-
-public sealed class KeyAuthConfig
-{
-    public string ApiUrl { get; init; } = "https://keyauth.win/api/1.2/";
-    public string AppName { get; init; } = string.Empty;
-    public string OwnerId { get; init; } = string.Empty;
-    public string Secret { get; init; } = string.Empty;
-    public string Version { get; init; } = "1.0";
-}
-
-public sealed class AppConfig
-{
-    public KeyAuthConfig KeyAuth { get; init; } = new();
-    public ProxyConfig Proxy { get; init; } = new();
-}
-
-public sealed record KeyAuthResult(bool Success, string Message, string? RawJson = null)
-{
-    public static KeyAuthResult Ok(string message, string? rawJson = null) => new(true, message, rawJson);
-    public static KeyAuthResult Fail(string message) => new(false, message);
 }
