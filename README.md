@@ -3,7 +3,7 @@
 Sudah saya lengkapi supaya **semua file masuk ke GitHub + PR** (bukan cuma core code).
 
 ## Yang sekarang sudah ada
-- Solution/project: `proxy.sln`, `Proxy/Proxy.csproj`
+- Solution/project: `proxy1.sln`, `Proxy/Proxy.csproj`
 - Core app: `Proxy/Program.cs`
 - Services: `Proxy/src/Services/KeyAuthService.cs`, `Proxy/src/Services/ProxyServer.cs`
 - Models: `Proxy/src/Models/*`
@@ -18,4 +18,4 @@ Total tracked files sekarang jadi kisaran yang kamu ingat (**23-27**, saat ini 2
 ## Cara pakai cepat
 1. Download ZIP dari GitHub.
 2. Edit `Proxy/appsettings.json` (KeyAuth + target proxy).
-3. Jalankan via Visual Studio (`proxy.sln`) atau `Proxy/start-proxy.bat`.
+3. Jalankan via Visual Studio (`proxy1.sln`) atau `Proxy/start-proxy.bat`.
