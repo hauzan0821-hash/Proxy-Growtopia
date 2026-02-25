@@ -1,1 +1,1 @@
-# Proxy-Growtopia
+# GROWTOPIA-PROXY-LUA

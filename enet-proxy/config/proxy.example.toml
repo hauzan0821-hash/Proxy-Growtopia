@@ -1,0 +1,15 @@
+listen_host = "0.0.0.0"
+listen_port = 17049
+upstream_host = "213.179.209.175"
+upstream_port = 17049
+max_clients = 256
+verbose = true
+enable_lua = true
+lua_script_path = "../proxy.lua"
+
+# KeyAuth gate
+keyauth_enabled = true
+keyauth_url = "https://keyauth.win/api/seller/"
+keyauth_owner_id = "KRZWWBf8dt"
+keyauth_secret_id = "8c17983afece3659d7c8d9b6bf0b3e778a75df88a74e6173cc2819dcbd5e5cef"
+keyauth_app = "GTProxy"

@@ -1,0 +1,18 @@
+{
+  "growtopia_version": "5.32",
+  "upstream": {
+    "host": "213.179.209.175",
+    "port": 17049
+  },
+  "proxy": {
+    "listen_host": "0.0.0.0",
+    "listen_port": 17049,
+    "max_clients": 256,
+    "debug": true
+  },
+  "features": {
+    "command_prefix": "/",
+    "enable_hooks": true,
+    "enable_packet_log": false
+  }
+}
