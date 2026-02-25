@@ -1,28 +1,44 @@
 # Proxy-Growtopia
 
-Sekarang project sudah lengkap untuk kebutuhan kamu:
-- ada **`proxy.sln`** (biar run dari Visual Studio, bukan CMD auto-close)
-- ada login **KeyAuth tester plan**
-- setelah login sukses, langsung jalan **TCP proxy**
+Semua file penting sudah dimasukkan ke repository & PR, jadi kamu tinggal download lalu jalankan.
 
-## File penting
+## Isi project
 - `proxy.sln` → solusi Visual Studio
-- `Proxy/Program.cs` → entry point (KeyAuth + start proxy)
+- `Proxy/Proxy.csproj` → project .NET 8
+- `Proxy/Program.cs` → flow utama (KeyAuth login lalu start proxy)
 - `Proxy/src/Services/KeyAuthService.cs` → request API KeyAuth (`init` + `license`)
-- `Proxy/src/Services/ProxyServer.cs` → server proxy TCP
+- `Proxy/src/Services/ProxyServer.cs` → TCP forwarding server
 - `Proxy/appsettings.json` → konfigurasi KeyAuth + proxy
+- `Proxy/start-proxy.bat` → run cepat via double click (ada pause supaya tidak auto close)
+- `Proxy/build-release.bat` → build release publish
 
-## Setup cepat
-1. Buka `proxy.sln` di Visual Studio.
-2. Edit `Proxy/appsettings.json`:
-   - `KeyAuth.AppName`, `KeyAuth.OwnerId`, `KeyAuth.Version`
-   - `KeyAuth.Secret` (opsional, isi jika app kamu minta secret)
-   - `Proxy.ListenIp`, `Proxy.ListenPort`
-   - `Proxy.TargetHost`, `Proxy.TargetPort`
-3. Run project (F5 / Ctrl+F5).
-4. Input license tester.
-5. Kalau login sukses, proxy aktif.
+## Cara download
+1. Download ZIP repo dari GitHub.
+2. Extract.
+3. Buka `proxy.sln` pakai Visual Studio.
+4. Edit `Proxy/appsettings.json` sesuai akun KeyAuth dan target proxy kamu.
+5. Run project (F5/Ctrl+F5) atau double click `Proxy/start-proxy.bat`.
 
-## Catatan runtime
-- Console tidak auto-close saat error; aplikasi akan minta ENTER.
-- Saat proxy sedang jalan, tekan **Q** untuk stop.
+## Contoh konfigurasi
+```json
+{
+  "KeyAuth": {
+    "ApiUrl": "https://keyauth.win/api/1.2/",
+    "AppName": "ISI_NAMA_APP_KEYAUTH",
+    "OwnerId": "ISI_OWNER_ID_KEYAUTH",
+    "Secret": "ISI_SECRET_APP_KEYAUTH_BILA_DIPERLUKAN",
+    "Version": "1.0"
+  },
+  "Proxy": {
+    "ListenIp": "127.0.0.1",
+    "ListenPort": 17091,
+    "TargetHost": "213.179.209.168",
+    "TargetPort": 17091
+  }
+}
+```
+
+## Catatan
+- Saat login/license gagal, console akan menunggu ENTER (tidak langsung ketutup).
+- Saat proxy jalan, tekan **Q** untuk stop.
+- Pastikan .NET 8 SDK terinstall jika menjalankan dari source.
