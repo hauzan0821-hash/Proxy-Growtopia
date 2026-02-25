@@ -1,22 +1,28 @@
 # Proxy-Growtopia
 
-Repo ini saya rapikan: saya hapus file tambahan yang tidak penting/kurang jelas, jadi sekarang fokus ke file inti proxy + KeyAuth.
+Sekarang semua file sudah disatukan supaya dari PR kamu bisa **langsung download** tanpa nambah file lagi.
 
-## File inti
-- `proxy1.sln`
-- `Proxy/Proxy.csproj`
+## Status file
+- Total file tracked: **25 files**
+- Solution: `proxy1.sln`
+- Project utama: `Proxy/Proxy.csproj`
+- Build workflow: `.github/workflows/build-proxy.yml`
+- Release zip workflow: `.github/workflows/release-zip.yml`
+
+## Struktur penting
 - `Proxy/Program.cs`
-- `Proxy/src/Services/KeyAuthService.cs`
-- `Proxy/src/Services/ProxyServer.cs`
+- `Proxy/src/Services/*`
 - `Proxy/src/Models/*`
 - `Proxy/src/Utils/*`
 - `Proxy/appsettings.json`
 - `Proxy/appsettings.example.json`
 - `Proxy/start-proxy.bat`
 - `Proxy/build-release.bat`
-- `.github/workflows/build-proxy.yml`
+- `Proxy/run-debug.bat`
+- `docs/*`
 
-## Jalankan
-1. Buka `proxy1.sln` di Visual Studio.
-2. Edit `Proxy/appsettings.json` sesuai data KeyAuth kamu.
-3. Run (F5/Ctrl+F5) atau jalankan `Proxy/start-proxy.bat`.
+## Cara pakai
+1. Download ZIP repo dari PR/GitHub.
+2. Edit `Proxy/appsettings.json` sesuai akun KeyAuth.
+3. Buka `proxy1.sln` di Visual Studio, lalu run.
+4. Atau langsung pakai `Proxy/start-proxy.bat`.
