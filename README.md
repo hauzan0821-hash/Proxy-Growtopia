@@ -26,3 +26,12 @@ Sekarang semua file sudah disatukan supaya dari PR kamu bisa **langsung download
 2. Edit `Proxy/appsettings.json` sesuai akun KeyAuth.
 3. Buka `proxy1.sln` di Visual Studio, lalu run.
 4. Atau langsung pakai `Proxy/start-proxy.bat`.
+
+
+## Lua files
+- `lua/config.lua`
+- `lua/proxy.lua`
+- `lua/run-lua-proxy.bat`
+- `lua/README.md`
+
+Semua file Lua sudah dimasukkan ke repo + PR, jadi tinggal download.
