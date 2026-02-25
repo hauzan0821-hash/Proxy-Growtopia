@@ -42,3 +42,8 @@ Semua file penting sudah dimasukkan ke repository & PR, jadi kamu tinggal downlo
 - Saat login/license gagal, console akan menunggu ENTER (tidak langsung ketutup).
 - Saat proxy jalan, tekan **Q** untuk stop.
 - Pastikan .NET 8 SDK terinstall jika menjalankan dari source.
+
+## GitHub / PR
+- Semua file project sudah ada di repository ini dan ikut ke PR branch.
+- Saya tambahkan workflow GitHub Actions di `.github/workflows/build-proxy.yml` supaya tiap push/PR otomatis build + publish artifact `proxy-win-x64`.
+- Jadi kalau kamu download dari GitHub, isi project sudah lengkap (source + script + workflow build).
